@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loader.css">
+</head>
+<body>
+    <div id="chatbot-container">
+        <button id="chatbot-button">💬</button>
+        <!-- Fenêtre modale du chatbot -->
+        <div id="chatbot-modal">
+            <div id="chatbot-header">
+                <div>
+                    <img src="avatar.jpeg" alt="">
+                    <div>
+                        <h3>Freddy</h3>
+                        <p>En ligne</p>
+                    </div>
+                </div>
+                <button id="close-chatbot">&times;</button>
+            </div>
+            <div id="chatbot-messages">
+            </div>
+            <div id="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Écrivez un message...">
+                <button id="chatbot-send">➤</button>
+            </div>
+        </div>
+    </div>
+    <script src="bot.js"></script>
+</body>
+</html>
