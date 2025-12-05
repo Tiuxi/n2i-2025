@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etes-vous aveugle ?</title>
 
-    <script src="msg.js" defer></script>
+    <link rel="stylesheet" href="assets/styles/form.css">
+    <script src="assets/js/msg.js" defer></script>
 </head>
 <body>
-    <label for="msgInput">Entrez votre message :</label>
-    <input type="text" id="msgInput" placeholder="Coucou" style="display:none">
-    <button id="msgValidate" type="button">Validate</button>
+    <div class="gameboy-screen">
+        <form>
+            <label for="msgInput">Entrez votre message :</label>
+            <input type="text" id="msgInput" placeholder="Coucou" style="display:none">
+            <button id="msgValidate" type="button">Validate</button>
+        </form>
+        <div class="screen-arrows">
+            <a href="subject.html" aria-label="Précédent">
+                ◀
+            </a>
+            <span></span>
+        </div>
+        <div class="screen-nav">
+            <span>4/4</span>
+        </div>
+    </div>
 </body>
 </html>

@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="assets/styles/form.css">
+    <script src="assets/js/subject.js" defer></script>
     <style>
-        #subject {
-            width: 300px;
-            font-size: 16px;
-        }
         .touche {
             width: 50px;
             vertical-align: middle;
@@ -35,6 +34,7 @@
     </style>
 </head>
 <body>
+    <div class="gameboy-screen">
     <form action="get">
         <label for="subject">Sujet du message :</label><br>
         <button type="button" id="indiceBtn">Indice</button><br>
@@ -60,6 +60,17 @@
         </div><br>
         <input type="text" name="subject" id="subject" maxlength="100">
     </form>
-    <script src="subject.js"></script>
+    <div class="screen-arrows">
+        <a href="email.html" aria-label="Précédent">
+            ◀
+        </a>
+        <a href="msg.html" aria-label="Suivant">
+            ▶
+        </a>
+    </div>
+    <div class="screen-nav">
+        <span>3/4</span>
+    </div>
+    </div>
 </body>
 </html>

@@ -9,7 +9,7 @@ function isValidEmail(email) {
     return pattern.test(email);
 }
 
-fetch("/keys.json")
+fetch("assets/js/keys.json")
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');

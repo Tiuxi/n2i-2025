@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Force a vous :D</title>
 
-    <script src="email.js" defer></script>
+    <link rel="stylesheet" href="assets/styles/form.css">
+    <script src="assets/js/email.js" defer></script>
 </head>
 <body>
-    <label for="cypherInput">Entrez votre email, la clé Cesar est: <span id="keyDisplay"></span></label>
-    <input type="email" id="cypherInput" placeholder="GL gang...">
+    <div class="gameboy-screen">
+        <form>
+            <label for="cypherInput">Entrez votre email, la clé Cesar est: <span id="keyDisplay"></span></label>
+            <input type="email" id="cypherInput" placeholder="GL gang...">
+        </form>
+        <div class="screen-arrows">
+            <a href="name.html" aria-label="Précédent">
+                ◀
+            </a>
+            <a href="subject.html" aria-label="Suivant">
+                ▶
+            </a>
+        </div>
+        <div class="screen-nav">
+            <span>2/4</span>
+        </div>
+    </div>
 </body>
 </html>
