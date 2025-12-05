@@ -87,7 +87,7 @@ body {
     position: absolute;
     top: 42%;
     left: 5%;
-    width: 22%;
+    width: 80%;
     list-style: none;
 }
 
@@ -177,3 +177,4 @@ button:hover {
     color: green;
     font-weight: bold;
 }
+
