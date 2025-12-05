@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #subject {
+            width: 300px;
+            font-size: 16px;
+        }
+        .touche {
+            width: 50px;
+            vertical-align: middle;
+        }
+        .keypad {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .keypad.hidden {
+            display: none;
+        }
+        .keypad-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+        .keypad-row.last {
+            display: flex;
+            justify-content: center;
+        }
+        .keypad-row.last img {
+            margin: 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <form action="get">
+        <label for="subject">Sujet du message :</label><br>
+        <button type="button" id="indiceBtn">Indice</button><br>
+        <div class="keypad hidden">
+            <div class="keypad-row">
+                <img src="img/touche_1.png" class="touche">
+                <img src="img/touche_2.png" class="touche">
+                <img src="img/touche_3.png" class="touche">
+            </div>
+            <div class="keypad-row">
+                <img src="img/touche_4.png" class="touche">
+                <img src="img/touche_5.png" class="touche">
+                <img src="img/touche_6.png" class="touche">
+            </div>
+            <div class="keypad-row">
+                <img src="img/touche_7.png" class="touche">
+                <img src="img/touche_8.png" class="touche">
+                <img src="img/touche_9.png" class="touche">
+            </div>
+            <div class="keypad-row last">
+                <img src="img/touche_0.png" class="touche">
+            </div>
+        </div><br>
+        <input type="text" name="subject" id="subject" maxlength="100">
+    </form>
+    <script src="subject.js"></script>
+</body>
+</html>
