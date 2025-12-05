@@ -1,6 +1,11 @@
 let keylen = 1;
 let key;
 
+function isValidEmail(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+
 fetch("/keys.json")
     .then(response => {
         if (!response.ok) {
@@ -40,6 +45,14 @@ if (!input) {
             input.value += result;
         } else {
             input.value += event.key;
+        }
+    });
+
+    input.addEventListener('change', function() {
+        if (isValidEmail(input.value)) {
+            console.log('Valid email');
+        } else {
+            console.warn('Invalid email');
         }
     });
 }
