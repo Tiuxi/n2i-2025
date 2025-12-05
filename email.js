@@ -1,6 +1,9 @@
 let keylen = 1;
 let key;
 
+const keyDisplay = document.getElementById("keyDisplay");
+if (keyDisplay) keyDisplay.textContent = String(keylen);
+
 function isValidEmail(email) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
@@ -21,9 +24,11 @@ fetch("/keys.json")
         keylen = key.length || keylen;
 
         console.log(`Using key: ${key}`);
+        if (keyDisplay) keyDisplay.textContent = String(key != null ? key : keylen);
     })
     .catch(err => {
         console.warn('Failed to load keys.json, using fallback key=', keylen, err);
+        if (keyDisplay) keyDisplay.textContent = String(keylen);
     });
 
 const input = document.getElementById("cypherInput");
