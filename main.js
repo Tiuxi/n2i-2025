@@ -4,8 +4,8 @@ const baseCoord = new Point(5, 5, 3);
 const fps = 60;
 const movePerSeconds = 10;
 
-const allFoodImagesSrc = ["apple.png", "Google.png", "microOffice.png", "windob.png"];
-const allAltImagesSrc = ["fairphone.png", "duckduckgo.png", "libreOffice.png", "tux.png"];
+const allFoodImagesSrc = ["apple.webp", "Google.png", "microOffice.webp", "windob.png", "ytb.webp"];
+const allAltImagesSrc = ["fairphone.png", "duckduckgo.webp", "libreOffice.webp", "tux.webp", "dailymotion.png"];
 
 var mainSnake;
 var time;
@@ -14,6 +14,8 @@ var running;
 var allFoodImages = [];
 var currentImage;
 var isFirstTime = false;
+var audio = new Audio('tankline-menu.mp3');
+audio.play();
 
 const drawBoard = () => {
     for (let x = 0; x <= winSize.x; x += tileSize) {
