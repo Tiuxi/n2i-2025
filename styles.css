@@ -86,22 +86,35 @@ canvas {
 #chatbot-header > div {
     display: flex;
     align-items: center;
+    position: relative;
+}
 
-    & > img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
+#chatbot-header > div > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
-    & > div > h3 {
-        font-size: 1.3rem;
-    }
+#chatbot-header > div::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #29bd4c;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    bottom: 0px;
+    left: 45px;
+}
 
-    & > div > p {
-        font-size: 1rem;
-        color: #d4edda;
-    }
+#chatbot-header > div > div > h3 {
+    font-size: 1.3rem;
+}
+
+#chatbot-header > div > div > p {
+    font-size: 1rem;
+    color: #d4edda;
 }
 
 #close-chatbot {
