@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('Pix32.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: MyFont, Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 40px;
+    margin: 0;
+}
+
+/* ----------- STRUCTURE ----------- */
+
+.bigcontainer {
+    display: flex;
+    margin-inline: 10%;
+    gap: 10%;
+    align-items: stretch;
+}
+
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: auto;
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ----------- CARD FIX: plus d'absolu sauf pour superposition ----------- */
+
+.container2 {
+    max-width: 600px;
+    position: relative;       /* OBLIGATOIRE pour les superpositions */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Image principale : plus de absolute */
+.cardImage {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Type image : superposition → on garde absolute mais plus propre */
+.typeImage {
+    position: absolute;
+    top: 4.6%;
+    right: 8%;
+    width: 50px;
+    height: auto;
+    z-index: 10;
+}
+
+/* Illustration : superposition */
+.illusImage  {
+    position: absolute;
+    top: 13%;
+    left: 7.1%;
+    width: 85%;
+    height: 29%;
+    z-index: 10;
+}
+
+/* Nom : superposition propre */
+.nom {
+    position: absolute;
+    top: 3.2%;
+    left: 10%;
+    font-size: 28px;
+    z-index: 20;
+}
+
+/* ----------- LISTE COMPÉTENCES ----------- */
+
+#skillList2 {
+    position: absolute;
+    top: 42%;
+    left: 5%;
+    width: 22%;
+    list-style: none;
+}
+
+
+#skillList2 li {
+    padding: 0px 0;
+}
+
+h2 {
+    margin-bottom: 0px;
+    margin-top:  1%;
+}
+
+/* ----------- AUTRES ----------- */
+
+label, h3 {
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    background: #0066ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #0050d4;
+}
+
+/* CARROUSEL */
+.carousel {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.carousel img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#successMsg {
+    margin-top: 20px;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Profil</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<body>
+<div class="bigcontainer">
+    <div class="container">
+
+        <h2>Création de Profil</h2>
+
+        <!-- PSEUDO -->
+        <h3 for="pseudo">Pseudo / Nom :</h3>
+        <input type="text" id="pseudo" required>
+
+        <!-- CARROUSEL -->
+        <h3>Type d'émotion :</h3>
+        <div class="carousel">
+            <img id="carouselImage" src="emote_envie.png" alt="Image">
+            <h1 id="carouselText">
+                Envie
+            </h1>
+            <button id="nextImage">→</button>
+        </div>
+
+        <h3>Importer une image :</h3>
+        <input type="file" id="imagePicker" accept="image/*">
+
+
+        <!-- AJOUT DE COMPÉTENCES -->
+        <h3>Ajouter des compétences techniques et sociales :</h3>
+
+        <div class="skill-form">
+            <input type="text" id="skillName" placeholder="Nom de la compétence">
+            <textarea id="skillDesc" placeholder="Description"></textarea>
+            <button id="addSkill">Ajouter la compétence</button>
+        </div>
+
+        <ul id="skillList"></ul>
+
+        <!-- VALIDATION -->
+        <button id="validate">Valider</button>
+
+        <p id="successMsg" class="hidden">✔ Profil validé !</p>
+
+    </div>
+    <div class="container2" id="container2">
+        <img class="cardImage" id="cardImage" src="envie.png" alt="Image">
+        <img class="typeImage" id="typeImage" src="emote_envie.png" alt="Image">
+        <img class="illusImage" id="illusImage" src="emote_envie.png" alt="Image">
+        <h1 class="nom" id="nom">Pseudo</h1>
+        <ul id="skillList2"></ul>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
