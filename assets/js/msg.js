@@ -55,6 +55,11 @@ if (!msgInput || !validateBtn) {
         validated = true;
         msgInput.style.display = "inline-block";
         console.log("Message validated by user. Stopping show/hide loop.");
+        
+        // Afficher le popup
+        if (confirm("Formulaire bien envoyé")) {
+            window.location.href = "index.php";
+        }
     });
 
     scheduleNext();

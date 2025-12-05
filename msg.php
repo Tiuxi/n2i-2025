@@ -16,7 +16,7 @@
         <form>
             <label for="msgInput">Entrez votre message :</label>
             <input type="text" id="msgInput" placeholder="Coucou" style="display:none">
-            <button id="msgValidate" type="button">Validate</button>
+            <button id="msgValidate" type="button">Valider</button>
         </form>
         <div class="screen-arrows">
             <a href="subject.php" aria-label="Précédent">

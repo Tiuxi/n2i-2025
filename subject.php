@@ -58,7 +58,7 @@
                 <img src="assets/img/touche_0.png" class="touche">
             </div>
         </div><br>
-        <input type="text" name="subject" id="subject" maxlength="100">
+        <input type="text" name="subject" id="subject" maxlength="100" placeholder="Sujet">
     </form>
     <div class="screen-arrows">
         <a href="email.php" aria-label="Précédent">
