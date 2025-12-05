@@ -1,4 +1,25 @@
-const key = 1;
+let keylen = 1;
+let key;
+
+fetch("/keys.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(keys => {
+        const ids = Object.keys(keys);
+
+        const randomId = ids[Math.floor(Math.random() * ids.length)];
+        key = keys[randomId];
+        keylen = key.length || keylen;
+
+        console.log(`Using key: ${key}`);
+    })
+    .catch(err => {
+        console.warn('Failed to load keys.json, using fallback key=', keylen, err);
+    });
 
 const input = document.getElementById("cypherInput");
 
@@ -14,10 +35,9 @@ if (!input) {
 
         if (ch >= 'a' && ch <= 'z') {
             let code = ch.charCodeAt(0) - 97;
-            let shifted = (code + key) % 26;
+            let shifted = (code + keylen) % 26;
             let result = String.fromCharCode(shifted + 97);
             input.value += result;
-            console.log(result);
         } else {
             input.value += event.key;
         }
