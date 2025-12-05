@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/styles/form.css">
     <script src="assets/js/name.js" defer></script>
 </head>
 <body>
+    <?php include 'includes/navbar.php'; ?>
+    
     <div class="gameboy-screen">
     <form action="get" id="myForm">
         <label for="name">Prénom :</label><br>
@@ -45,7 +48,7 @@
     </form>
     <div class="screen-arrows">
         <span></span>
-        <a href="email.html" aria-label="Suivant">
+        <a href="email.php" aria-label="Suivant">
             ▶
         </a>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>NIRD - Snake</title>
     <script src=" https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
     <link rel="icon" href="data:,">
     <script src="snake.js"></script>
@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="loader.css">
 </head>
 <body>
+    <?php include 'includes/navbar.php'; ?>
+    
     <button id="replayBtn" onclick="setup()">Replay</button>
     <div id="chatbot-container">
         <button id="chatbot-button">

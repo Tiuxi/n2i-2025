@@ -16,7 +16,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #000;
-  background-image: url("../img/background.webp");
+  background-image: url("../../gameBoyAdvance.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

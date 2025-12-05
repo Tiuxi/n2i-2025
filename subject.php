@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/styles/form.css">
     <script src="assets/js/subject.js" defer></script>
     <style>
@@ -28,12 +29,11 @@
             display: flex;
             justify-content: center;
         }
-        .keypad-row.last img {
-            margin: 0 50px;
-        }
     </style>
 </head>
 <body>
+    <?php include 'includes/navbar.php'; ?>
+    
     <div class="gameboy-screen">
     <form action="get">
         <label for="subject">Sujet du message :</label><br>
@@ -61,10 +61,10 @@
         <input type="text" name="subject" id="subject" maxlength="100">
     </form>
     <div class="screen-arrows">
-        <a href="email.html" aria-label="Précédent">
+        <a href="email.php" aria-label="Précédent">
             ◀
         </a>
-        <a href="msg.html" aria-label="Suivant">
+        <a href="msg.php" aria-label="Suivant">
             ▶
         </a>
     </div>
