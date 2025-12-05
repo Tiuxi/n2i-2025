@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="loader.css">
 </head>
 <body>
+    <button id="replayBtn" onclick="setup()">Replay</button>
     <div id="chatbot-container">
         <button id="chatbot-button">
             <img src="bulle.png">

@@ -13,6 +13,7 @@ var food;
 var running;
 var allFoodImages = [];
 var currentImage;
+var isFirstTime = false;
 
 const drawBoard = () => {
     for (let x = 0; x <= winSize.x; x += tileSize) {
@@ -32,6 +33,8 @@ const gameOver = () => {
     textSize(50);
     text("Game over", (winSize.x / 2) - 120, (winSize.y / 2) - 10);
     running = false;
+
+    document.getElementById("replayBtn").hidden = false;
 }
 
 const generateFood = () => {
@@ -54,14 +57,18 @@ const drawFood = () => {
 }
 
 function setup() {
-    createCanvas(winSize.x, winSize.y);
-    frameRate(fps);
+    if (!isFirstTime) {
+        createCanvas(winSize.x, winSize.y);
+        frameRate(fps);
+        isFirstTime = true;
 
-    // load images
-    for (let i = 0; i < allFoodImagesSrc.length; i++) {
-        allFoodImages.push(loadImage("logo/" + allFoodImagesSrc[i]));
+        // load images
+        for (let i = 0; i < allFoodImagesSrc.length; i++) {
+            allFoodImages.push(loadImage("logo/" + allFoodImagesSrc[i]));
+        }
     }
-    
+
+    document.getElementById("replayBtn").hidden = true;
 
     mainSnake = new Snake(baseCoord.x, baseCoord.y, 3, tileSize, winSize, allAltImagesSrc);
     time = 0;
