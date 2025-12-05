@@ -1,4 +1,4 @@
-const winSize = new Point(900, 570);
+const winSize = new Point(600, 390);
 const tileSize = 30;
 const baseCoord = new Point(5, 5, 3);
 const fps = 60;
