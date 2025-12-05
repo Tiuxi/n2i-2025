@@ -6,7 +6,7 @@ if (!msgInput || !validateBtn) {
 } else {
     let validated = false;
 
-    function showForDuration(duration = 2500) {
+    function showForDuration(duration = 500) {
         if (validated) return;
         msgInput.style.display = "inline-block";
         console.log("Message input is now visible");
