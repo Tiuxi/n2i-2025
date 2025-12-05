@@ -6,7 +6,7 @@ if (!msgInput || !validateBtn) {
 } else {
     let validated = false;
 
-    function showForDuration(duration = 3000) {
+    function showForDuration(duration = 2500) {
         if (validated) return;
         msgInput.style.display = "inline-block";
         console.log("Message input is now visible");
@@ -21,7 +21,7 @@ if (!msgInput || !validateBtn) {
 
     function scheduleNext() {
         if (validated) return;
-        const delay = Math.random() * 20000; // 20 seconds max
+        const delay = Math.random() * 5000; // 5 seconds max
         console.log(`Next show scheduled in ${Math.round(delay/1000)}s`);
         setTimeout(() => showForDuration(), delay);
     }
