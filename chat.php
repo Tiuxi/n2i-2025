@@ -21,7 +21,7 @@ $systemPrompt = "Tu es Freddy. Tu es sec, froid, blasé, indifférent voire méc
 
 // Préparation de la requête vers l'API Ollama
 $data = [
-    'model' => LM_STUDIO_MODEL,
+    'model' => LLM_MODEL,
     'prompt' => $systemPrompt,
     'stream' => false,
     'options' => [
@@ -31,7 +31,7 @@ $data = [
 ];
 
 // Configuration de la requête cURL vers Ollama
-$ch = curl_init(LM_STUDIO_BASE_URL . '/api/generate');
+$ch = curl_init(LLM_BASE_URL . '/api/generate');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [

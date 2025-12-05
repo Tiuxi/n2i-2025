@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>Snake</title>
+    <script src=" https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <link rel="icon" href="data:,">
+    <script src="snake.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="loader.css">
 </head>
@@ -32,6 +36,6 @@
             </div>
         </div>
     </div>
-    <script src="bot.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>

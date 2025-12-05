@@ -5,7 +5,26 @@
 }
 
 body {
+    margin: 0;
+    background-color: black;
+    background-image: url(gameBoyAdvance.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    height: 100vh;
     font-family: Arial, sans-serif;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    margin-left: 16px;
+    margin-top: 103px;
 }
 
 :root {
@@ -15,43 +34,36 @@ body {
     --user-message-bg: #007bff;
     --user-message-color: #ffffff;
     --bot-message-color: #333333;
+    --bot-chatbot-button-size: 70px;
 }
 
 /* Bouton du chatbot */
 #chatbot-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
+    bottom: 25px;
+    right: 25px;
     color: white;
+    background-color: transparent;
     border: none;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 1000;
+    cursor: pointer;
 }
 
-#chatbot-button:hover {
-    background-color: var(--primary-color-dark);
+#chatbot-button > img {
+    width: var(--bot-chatbot-button-size);
+    height: var(--bot-chatbot-button-size);
 }
 
 /* Fenêtre modale du chatbot */
 #chatbot-modal {
     display: none;
     position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 350px;
-    height: 500px;
+    bottom: 120px;
+    right: 25px;
+    width: 450px;
+    height: 600px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     z-index: 1001;
     flex-direction: column;
 }
@@ -76,27 +88,27 @@ body {
     align-items: center;
 
     & > img {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         margin-right: 10px;
     }
 
+    & > div > h3 {
+        font-size: 1.3rem;
+    }
+
     & > div > p {
-        font-size: 12px;
+        font-size: 1rem;
         color: #d4edda;
     }
-}
-
-#chatbot-header h3 {
-    font-size: 18px;
 }
 
 #close-chatbot {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -113,6 +125,7 @@ body {
     padding: 10px;
     border-radius: 8px;
     max-width: 80%;
+    font-size: 1.1rem;
     width: fit-content;
     word-wrap: break-word;
 }
@@ -144,7 +157,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 15px;
     outline: none;
-    font-size: 14px;
+    font-size: 1.2rem;
 }
 
 #chatbot-send {
