@@ -13,9 +13,9 @@ const drawBoard = () => {
     for (let x = 0; x <= winSize.x; x += tileSize) {
         for (let y = 0; y <= winSize.y; y += tileSize) {
             if (((x + y) / tileSize) % 2 === 0) {
-                fill(100);
+                fill(89, 147, 43);
             } else {
-                fill(200);
+                fill(119, 177, 73);
             }
             rect(x, y, tileSize, tileSize);
         }
@@ -41,7 +41,7 @@ const generateFood = () => {
 }
 
 const drawFood = () => {
-    fill([255, 0, 0]);
+    fill(252, 50, 50);
     rect(food.x * tileSize, food.y * tileSize, tileSize, tileSize);
 }
 
@@ -68,10 +68,14 @@ function draw() {
 
     if (((time * movePerSeconds) % fps) === 0) {
         if (food.x === (mainSnake.body[0].x + mainSnake.dir.x) && food.y === (mainSnake.body[0].y + mainSnake.dir.y)) {
-            mainSnake.body.unshift(new Point(mainSnake.body[0].x + mainSnake.dir.x, mainSnake.body[0].y + mainSnake.dir.y));
+            mainSnake.addBodyPart();
             generateFood();
         } else {
             if (mainSnake.move() === 1)
+                gameOver();
+
+            if (mainSnake.body[0].x < 0 || mainSnake.body[0].x > (winSize.x / tileSize)-1 || 
+                mainSnake.body[0].y < 0 || mainSnake.body[0].y > (winSize.y / tileSize)-1)
                 gameOver();
         }
     }
