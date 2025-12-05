@@ -42,6 +42,8 @@
 
         <ul id="skillList"></ul>
 
+        <a href="../index.php">Retour au menu</a>
+        
         <!-- VALIDATION -->
         <button id="validate">Valider</button>
 

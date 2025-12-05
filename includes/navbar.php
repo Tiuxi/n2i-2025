@@ -3,6 +3,7 @@
 $navLinks = [
     ['Accueil', 'index.php'],
     ['Formulaire', 'name.php'],
+    ['Profil', '/antoine/profile.php'],
 ];
 ?>
 <nav class="navbar">
