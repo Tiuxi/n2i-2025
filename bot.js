@@ -35,8 +35,27 @@ function addMessage(text, isUser) {
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }
 
+// Fonction pour envoyer un message à l'API LM Studio
+async function getBotResponse(userMessage) {
+    try {
+        const response = await fetch('chat.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: userMessage })
+        });
+
+        const data = await response.json();
+        return data.response;
+    } catch (error) {
+        console.error('Erreur:', error);
+        return 'Désolé, une erreur est survenue. Veuillez réessayer.';
+    }
+}
+
 // Fonction pour envoyer un message
-function sendMessage() {
+async function sendMessage() {
     const message = chatbotInput.value.trim();
     if (message === '') return;
 
@@ -49,15 +68,15 @@ function sendMessage() {
     typingIndicator.style.display = 'block';
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-    // Simuler une réponse du chatbot
-    setTimeout(() => {
-        // Retirer l'indicateur de frappe
-        typingIndicator.style.display = 'none';
-        typingIndicator.remove();
-        
-        // Ajouter le message du bot
-        addMessage('Bonjour', false);
-    }, 500);
+    // Obtenir la réponse du bot via l'API
+    const botResponse = await getBotResponse(message);
+    
+    // Retirer l'indicateur de frappe
+    typingIndicator.style.display = 'none';
+    typingIndicator.remove();
+    
+    // Ajouter le message du bot
+    addMessage(botResponse, false);
 }
 
 // Envoyer le message avec le bouton
