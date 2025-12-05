@@ -1,5 +1,3 @@
-const allImagesSrc = ["test1.png", "test2.png"];
-
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -8,10 +6,11 @@ class Point {
 }
 
 class Snake {
-    constructor(coordx, coordy, len, tileSize, winSize) {
+    constructor(coordx, coordy, len, tileSize, winSize, allImagesSrc) {
         this.body = [];
         this.color = [50, 50, 70, 220];
         this.dir = new Point(1, 0);
+        this.allImagesSrc = allImagesSrc;
         this.allImages = [];
         this.images = [];
 
@@ -19,8 +18,8 @@ class Snake {
         this.tileSize = tileSize;
 
         // load images
-        for (let i=0; i<allImagesSrc.length; i++) {
-            this.allImages.push(loadImage(allImagesSrc[i]));
+        for (let i=0; i<this.allImagesSrc.length; i++) {
+            this.allImages.push(loadImage("logo/" + this.allImagesSrc[i]));
         }
 
         for (let x = 0; x < len; x++) {
@@ -33,7 +32,7 @@ class Snake {
         for (let i = 0; i < this.body.length; i++) {
             fill(this.color);
             rect(this.body[i].x * tileSize, this.body[i].y * tileSize, tileSize, tileSize);
-            //image(this.allImages[this.images[i]], this.body[i].x * this.tileSize, this.body[i].y * this.tileSize);
+            image(this.allImages[this.images[i]], this.body[i].x * this.tileSize, this.body[i].y * this.tileSize);
         }
     }
 
@@ -61,8 +60,8 @@ class Snake {
         return 0;
     }
 
-    addBodyPart() {
+    addBodyPart(indexImg) {
         this.body.unshift(new Point(this.body[0].x + this.dir.x, this.body[0].y + this.dir.y));
-        this.images.push(int(Math.random() * this.allImages.length));
+        this.images.push(indexImg);
     }
 }

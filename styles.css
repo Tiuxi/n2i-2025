@@ -9,7 +9,7 @@ body {
     background-color: black;
     background-image: url(gameBoyAdvance.png);
     background-repeat: no-repeat;
-    background-position: 50% 0%;
+    background-position: center center;
     height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -24,7 +24,7 @@ main {
 
 canvas {
     margin-left: 16px;
-    margin-top: 103px;
+    margin-top: 90px;
 }
 
 :root {

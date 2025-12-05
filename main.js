@@ -4,10 +4,15 @@ const baseCoord = new Point(5, 5, 3);
 const fps = 60;
 const movePerSeconds = 10;
 
+const allFoodImagesSrc = ["apple.png", "Google.png", "microOffice.png", "windob.png"];
+const allAltImagesSrc = ["fairphone.png", "duckduckgo.png", "libreOffice.png", "tux.png"];
+
 var mainSnake;
 var time;
 var food;
 var running;
+var allFoodImages = [];
+var currentImage;
 
 const drawBoard = () => {
     for (let x = 0; x <= winSize.x; x += tileSize) {
@@ -38,18 +43,27 @@ const generateFood = () => {
             break;
         }
     }
+
+    currentImage = int(Math.random() * allFoodImagesSrc.length);
 }
 
 const drawFood = () => {
     fill(252, 50, 50);
     rect(food.x * tileSize, food.y * tileSize, tileSize, tileSize);
+    image(allFoodImages[currentImage], food.x * tileSize, food.y * tileSize);
 }
 
 function setup() {
     createCanvas(winSize.x, winSize.y);
     frameRate(fps);
 
-    mainSnake = new Snake(baseCoord.x, baseCoord.y, 3, tileSize, winSize);
+    // load images
+    for (let i = 0; i < allFoodImagesSrc.length; i++) {
+        allFoodImages.push(loadImage("logo/" + allFoodImagesSrc[i]));
+    }
+    
+
+    mainSnake = new Snake(baseCoord.x, baseCoord.y, 3, tileSize, winSize, allAltImagesSrc);
     time = 0;
     generateFood();
     running = true;
@@ -68,7 +82,7 @@ function draw() {
 
     if (((time * movePerSeconds) % fps) === 0) {
         if (food.x === (mainSnake.body[0].x + mainSnake.dir.x) && food.y === (mainSnake.body[0].y + mainSnake.dir.y)) {
-            mainSnake.addBodyPart();
+            mainSnake.addBodyPart(currentImage);
             generateFood();
         } else {
             if (mainSnake.move() === 1)
